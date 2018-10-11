@@ -1,0 +1,107 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+rn_path = '../node_modules/react-native'
+
+target 'mod' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for mod
+  pod "yoga", :path => rn_path + '/ReactCommon/yoga'
+
+  # Needed by CxxBridge
+  pod 'DoubleConversion', :podspec => rn_path + '/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => rn_path + '/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => rn_path + '/third-party-podspecs/Folly.podspec'
+
+  pod 'React', :subspecs => [
+    'Core',
+    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
+    # Use default
+    #'jschelpers',
+    #'cxxreact',
+    #'BatchedBridge',
+    'CxxBridge',
+    'ART',
+    'RCTActionSheet',
+    #'RCTAdSupport',
+    'RCTAnimation',
+    #'RCTCameraRoll',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTLinkingIOS',
+    'RCTNetwork',
+    'RCTPushNotification',
+    'RCTSettings',
+    'RCTText',
+    'RCTVibration',
+    'RCTWebSocket',
+    'RCTBlob',
+    #'RCTTest',
+  ], :path => rn_path
+
+  pod 'react-native-fbsdk', :subspecs => [
+    'Core',
+    'Login',
+    'Share',
+  ], :path => '../node_modules/react-native-fbsdk/'
+
+  pod 'MQTTClient'
+  # Pods for FCM notification
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
+
+  pod 'ReactNativeFabric', :path => '../node_modules/react-native-fabric'
+  pod 'ReactNativeLocalization', :path => '../node_modules/react-native-localization'
+  pod 'GoogleMaps'  # <~~ remove this line if you do not want to support GoogleMaps on iOS
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps/'  # <~~ if you need GoogleMaps support on iOS
+  pod 'Google-Maps-iOS-Utils' # Remove this line if you don't want to support GoogleMaps on iOS
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  # unofficial Podspec
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
+  pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+  pod 'react-native-geocoder', :path => '../node_modules/react-native-geocoder'
+  pod 'react-native-play-sound', :path => '../node_modules/react-native-play-sound'
+  pod 'react-native-camera', :path => '../node_modules/react-native-camera'
+
+  target 'mod-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+    pod 'ReactNativePermissions', :path => '../node_modules/react-native-permissions'
+  end
+
+  target 'modTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+# Start the React Native JS packager server when running the project in Xcode.
+
+start_packager = %q(
+if nc -w 5 -z localhost 8081 ; then
+  if ! curl -s "http://localhost:8081/status" | grep -q "packager-status:running" ; then
+    echo "Port 8081 already in use, packager is either not running or not running correctly"
+    exit 2
+  fi
+else
+  open $SRCROOT/../../node_modules/react-native/packager/launchPackager.command || echo "Can't start packager automatically"
+fi
+)
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "react-native-google-maps"
+        target.build_configurations.each do |config|
+            config.build_settings['CLANG_ENABLE_MODULES'] = 'No'
+        end
+    end
+  end
+  target = installer.pods_project.targets.select{|t| 'React' == t.name}.first
+  phase = target.new_shell_script_build_phase('Run Script')
+  phase.shell_script = start_packager
+end

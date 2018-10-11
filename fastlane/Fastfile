@@ -1,0 +1,134 @@
+# More documentation about how to customize your build
+# can be found here:
+# https://docs.fastlane.tools
+fastlane_version "1.109.0"
+
+# This value helps us track success metrics for Fastfiles
+# we automatically generate. Feel free to remove this line
+# once you get things running smoothly!
+
+default_platform :android
+
+# Fastfile actions accept additional configuration, but
+# don't worry, fastlane will prompt you for required
+# info which you can add here later
+lane :buildandroid do
+  sh("yarn")
+  # build the release variant
+  gradle(
+    task: "assemble",
+    build_type: "Release",
+    project_dir: "android/"
+  )
+end
+
+lane :android do
+  buildandroid
+  # upload to Google Play
+  supply(
+    track: "beta",
+    skip_upload_images: true,
+    skip_upload_screenshots: true,
+    apk: "android/app/build/outputs/apk/release/app-release.apk"
+  )
+end
+
+lane :bumpiOS do
+  Dir.chdir("../") do
+    sh("fastlane/bump_ios")
+  end
+end
+
+lane :buildios do
+  # build your iOS app
+  sh("yarn")
+  bumpiOS
+  Dir.chdir("../ios") do
+    # code here runs in the parent directory
+    sh("pwd")
+    sh("./setup_ios.sh")
+  end
+  cocoapods(
+    podfile: "./ios/Podfile"
+  )
+  gym(
+    scheme: "mod",
+    export_method: "app-store",
+    workspace: 'ios/mod.xcworkspace'
+  )
+end
+
+lane :ios do
+  buildios
+
+  # ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+  # upload to Testflight
+  pilot(skip_waiting_for_build_processing: true)
+end
+
+lane :update_google_signin_acer do
+  update_info_plist(
+    xcodeproj: "ios/mod.xcodeproj",
+    plist_path: "mod/Info.plist",
+    block: lambda { |plist|
+      urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "com.googleusercontent.apps.831187067856-l4u8sle99595mrfl1e06h20iiduot1jt"}
+      urlScheme[:CFBundleURLSchemes] = ["com.googleusercontent.apps.831187067856-babp3o7f63ek2ted4rjfm8flce7bd8qc"]
+    }
+  )
+  update_info_plist(
+    xcodeproj: "ios/mod.xcodeproj",
+    plist_path: "mod/Info.plist",
+    block: lambda { |plist|
+      urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "com.googleusercontent.apps.831187067856-l4u8sle99595mrfl1e06h20iiduot1jt"}
+      urlScheme[:CFBundleURLName] = "com.googleusercontent.apps.831187067856-babp3o7f63ek2ted4rjfm8flce7bd8qc"
+    }
+  )
+  update_info_plist(
+    xcodeproj: "ios/mod.xcodeproj",
+    plist_path: "mod/Info.plist",
+    block: lambda { |plist|
+      urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "com.acer.mod.dev"}
+      urlScheme[:CFBundleURLSchemes] = ["com.acer.mod"]
+    }
+  )
+  update_info_plist( # Advanced processing: find URL scheme for particular key and replace value
+    xcodeproj: "ios/mod.xcodeproj",
+    plist_path: "mod/Info.plist",
+    block: lambda { |plist|
+      urlScheme = plist["CFBundleURLTypes"].find{|scheme| scheme["CFBundleURLName"] == "com.acer.mod.dev"}
+      urlScheme[:CFBundleURLName] = "com.acer.mod"
+    }
+  )
+
+end
+
+lane :iosAcer do
+  Dir.chdir("../") do
+    sh("cp src/config/iOSClientId-acer.js src/config/iOSClientId.js")
+    sh("cp ios/mod/GoogleService-Info-acer.plist ios/mod/GoogleService-Info.plist")
+  end
+  update_google_signin_acer
+  update_project_team(
+    path: "ios/mod.xcodeproj",
+    teamid: "4EYEAYMKM9"
+  )
+  update_app_identifier(
+    xcodeproj: "ios/mod.xcodeproj", # Optional path to xcodeproj, will use the first .xcodeproj if not set
+    plist_path: "mod/Info.plist", # Path to info plist file, relative to xcodeproj
+    app_identifier: "com.acer.mod" # The App Identifier
+  )
+  update_project_provisioning(
+    xcodeproj: "ios/mod.xcodeproj",
+    profile: "ios/Acer_Outsource_Distribution_Mobility_on_Demand.mobileprovision", # optional if you use sigh
+    build_configuration: "Release"
+  )
+  buildios
+  # ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+  pilot(skip_waiting_for_build_processing: true)
+end
+
+lane :all do
+  android
+  ios
+  iosAcer
+end

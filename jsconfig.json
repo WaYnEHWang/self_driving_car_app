@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "exclude": [
+        "node_modules",
+        "ios/build",
+        "ios/Pods",
+        "android/build",
+        "android/app/build"
+    ]
+}

@@ -1,0 +1,56 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        maven { url "https://maven.google.com" }
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.google.gms:google-services:3.2.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+        classpath 'com.android.tools.build:gradle:3.1.0'
+    }
+}
+
+ext {
+    compileSdkVersion = 27
+    buildToolsVersion = "27.0.3"
+    minSdkVersion = 16
+    targetSdkVersion = 27
+    // or specify googlePlayServicesVersion to 11.8.0, but may not be >= 12.0.1
+    googlePlayServicesVersion = "+"
+    supportLibVersion = "27.1.0"
+}
+
+subprojects { subproject ->
+    afterEvaluate{
+        if((subproject.plugins.hasPlugin('android') || subproject.plugins.hasPlugin('android-library'))) {
+            android {
+                compileSdkVersion rootProject.ext.compileSdkVersion
+                buildToolsVersion rootProject.ext.buildToolsVersion
+            }
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenLocal()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        configurations.all {
+            resolutionStrategy {
+                force 'com.facebook.android:facebook-android-sdk:4.34.0'
+            }
+        }
+    }
+}

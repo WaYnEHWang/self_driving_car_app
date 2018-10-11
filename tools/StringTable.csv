@@ -1,0 +1,77 @@
+OS (Don't modify) __ReactNative__ __IOS__ __Android__,String_ID,English,Notice/ Descripition,Chinese - Taiwan
+,,en-rUS,,en,zh-TW
+__Android__,app_name,Mod,,Mod,宏碁自駕接駁車試乘應用
+__ReactNative__,app_name,Mod,,Mod,宏碁自駕接駁車
+__IOS__,CFBundleDisplayName,Mod,,Mod,宏碁自駕接駁車
+__ReactNative__,sign_in_with,Sign in with,,Sign in with,登入方式
+__ReactNative__,eula_content,"  Terms of use apply. Acer will collecr your personal data tpo provide the service. Acer will handle your data per our privacy policy.",,"  Terms of use apply. Acer will collecr your personal data tpo provide the service. Acer will handle your data per our privacy policy.",使用條款適用。 宏碁將收集您的個人數據以提供服務。 宏基將根據我們的隱私政策處理您的數據。
+__ReactNative__,check_eula,"I have read and agree to the https://eula and http://www.acer-group.com/public/index/privacy.htm.",,"I have read and agree to the https://eula and http://www.acer-group.com/public/index/privacy.htm.",我已閱讀並同意 https://eula 和 http://www.acer-group.com/public/index/privacy.htm 。
+__ReactNative__,eula,End User License Agreement,,End User License Agreement,使用者授權合約
+__ReactNative__,acer_privacy,Acer Privacy Policy,,Acer Privacy Policy,隱私權政策
+__ReactNative__,close,Close,,Close,關閉
+__ReactNative__,error_title,Invalid,,Invalid,無效
+__ReactNative__,error_connection_title,Connection Failed,,Connection Failed,連線失敗
+__ReactNative__,error_no_network,no network,,no network,請檢查您的網際網路連線。
+__ReactNative__,error_internal,"Failed to connect to server. Please try again later.",,"Failed to connect to server. Please try again later.",無法連線至伺服器。請稍後再試。
+__ReactNative__,error_invalid_parms,invalid parms,,invalid parms,參數無效
+__ReactNative__,error_facebook,FBLogin failed,,FBLogin failed,Facebook登入失敗
+__ReactNative__,error_google,"GoogleLogin failed or Google service error",,"GoogleLogin failed or Google service error",Google登入失敗或是Google服務發生錯誤
+__ReactNative__,error_mod_token_expire,Identity token has expired,,Identity token has expired,身分證明已過期，請再次登入。
+__ReactNative__,error_start_point,Please select your pick up site,,Please select your pick up site,請選擇你的上車站點
+__ReactNative__,error_end_point,Please choose your terminal,,Please choose your terminal,請選擇你的終點站
+__ReactNative__,error_car_cannot_go,It is not allowed to press the go button now,,It is not allowed to press the go button now,現在不允許按下發車
+__ReactNative__,error_database,"Update database failed, Please try again later.",,"Update database failed, Please try again later.",資料庫更新失敗，請稍後再試。
+__ReactNative__,error_single_format,"Single number format is a problem, Please try again later.",,"Single number format is a problem, Please try again later.",單號格式有問題，請稍後再試。
+__ReactNative__,error_facebook_auth,"An error occurred in Facebook authentication, Please try again later.",,"An error occurred in Facebook authentication, Please try again later.",Facebook認證發生錯誤，請稍後再試。
+__ReactNative__,error_google_auth,"An error occurred in Google authentication, Please try again later.",,"An error occurred in Google authentication, Please try again later.",Google認證發生錯誤，請稍後再試。
+__ReactNative__,error_mqtt,"Mqtt occurred an error, Please try again later.",,"Mqtt occurred an error, Please try again later.",Mqtt產生錯誤，請稍後再試。
+__ReactNative__,error_muti_login,This account repeated login,,This account repeated login,此帳號重複登入
+__ReactNative__,error_account_busy,This account is performing tasks and can not logout,,This account is performing tasks and can not logout,此帳號正在執行任務，無法登出
+__ReactNative__,error_user_cannot_create_more_request,The user has a request is currently being implemented,,The user has a request is currently being implemented,此User目前已有一張單子正在執行
+__ReactNative__,error_cannot_control_car,Cannot control the car,,Cannot control the car,車子未控制成功
+__ReactNative__,error_request_not_create,"The request was not set up. The car is currently in the mission, Please try again later.",,"The request was not set up. The car is currently in the mission, Please try again later.",訂單未成立，目前車輛正在執行任務中，請稍後再試。
+__ReactNative__,error_request_admin_cancel,"The requesr is canceled, Please try again later.",,"The requesr is canceled, Please try again later.",訂單被取消，請稍後再試。
+__ReactNative__,error_cannot_get_email,Cannot get the email infromation from social network,,Cannot get the email infromation from social network,無法向社群取得email資訊
+__ReactNative__,error_cannot_cancel_request,This request can not be canceled now,,This request can not be canceled now,此單現在無法取消
+__ReactNative__,error_car_disconnect_socket,The car is not connected to Socket,,The car is not connected to Socket,車子未與Socket連線
+__ReactNative__,error_rest_content,"Not yet operational, please try again later",,"Not yet operational, please try again later",目前尚未營運，請稍後再試。
+__ReactNative__,request,Request,,Request,訂單
+__ReactNative__,share_car,Share Car,,Share Car,共乘
+__ReactNative__,pick_up,Pick Up Time,,Pick Up Time,抵達時間
+__ReactNative__,passenger,Passenger,,Passenger,搭乘人數
+__ReactNative__,normal_operation,Normal Operation,,Normal Operation,自駕車營運中
+__ReactNative__,rest,No Service,,No Service,休息中
+__ReactNative__,start_point,Start point,,Start point,起始站
+__ReactNative__,end_point,End Point,,End Point,終點站
+__ReactNative__,logout,Logout,,Logout,登出
+__ReactNative__,send_request,Send Request,,Send Request,送出訂單
+__ReactNative__,my_request,My Request,,My Request,我的訂單
+__ReactNative__,add_request,Add Request,,Add Request,新增訂單
+__ReactNative__,pickup_time,Pickup Time,,Pickup Time,預計抵達時間
+__ReactNative__,waiting_for_reply,Waiting for reply,,Waiting for reply,等待確認中
+__ReactNative__,server_accept,Request confirmed,,Request confirmed,訂單已確認
+__ReactNative__,server_reject,Request not set up,,Request not set up,訂單未成立
+__ReactNative__,to_start,Go to the start point,,Go to the start point,前往搭車地點
+__ReactNative__,car_start,"Arrived at the start point, please get on the car",,"Arrived at the start point, please get on the car",抵達上車地點，請上車
+__ReactNative__,to_end,Go to the end point,,Go to the end point,前往終點站
+__ReactNative__,car_end,"Arrival at the end, welcome to take the ride again",,"Arrival at the end, welcome to take the ride again",抵達終點，歡迎再度搭乘
+__ReactNative__,to_garage,Go to the garage,,Go to the garage,前往車庫
+__ReactNative__,request_close,Request completed,,Request completed,訂單已完成
+__ReactNative__,admin_cancel,Admin cancel the request,,Admin cancel the request,隨車人員取消訂單
+__ReactNative__,user_cancel,Request canceled,,Request canceled,訂單已取消
+__ReactNative__,admin,Admin,,Admin,Admin
+__ReactNative__,departure,發車,,發車,發車
+__ReactNative__,driving_info,行車資訊,,行車資訊,行車資訊
+__ReactNative__,request_list,所有訂單,,所有訂單,所有訂單
+__ReactNative__,path,停靠站,,停靠站,停靠站
+__ReactNative__,go_to,前往,,前往,前往
+__ReactNative__,end_stop,終點站,,終點站,終點站
+__ReactNative__,empty_seats,空位,,空位,空位
+__ReactNative__,status,狀態,,狀態,狀態
+__ReactNative__,interrupt,中斷服務,,中斷服務,中斷服務
+__ReactNative__,car_status,車輛狀態,,車輛狀態,車輛狀態
+__ReactNative__,admin_status,Admin狀態,,Admin狀態,Admin狀態
+__ReactNative__,press_go,請按發車,,請按發車,請按發車
+__ReactNative__,agree,Agree,,Agree,同意
+__ReactNative__,admin_not_login,Admin is not online,,Admin is not online,隨車人員未上線
+__ReactNative__,car_busy,Car is busy,,Car is busy,車輛正在執行任務中

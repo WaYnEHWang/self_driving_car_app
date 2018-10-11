@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.0.aar/acca4ea2e7a3567a2bd90da83944ce65/res/drawable-watch-v20/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_disabled.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.0.aar/acca4ea2e7a3567a2bd90da83944ce65/res/drawable-watch-v20/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/206f28c04bff95d184674f1c22890dd7/res/drawable-watch-v20/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/play-services-auth-16.0.0.aar/acca4ea2e7a3567a2bd90da83944ce65/res/drawable-watch-v20/common_google_signin_btn_text_light_normal.xml"
+    }
+]

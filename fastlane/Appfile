@@ -1,0 +1,20 @@
+# The Appfile can be used to specify information that's used across all fastlane
+# tools, like your username or the app's bundle identifier.
+#
+# For more details, check out the documentation at:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
+
+# app_identifier "com.your.app" # the bundle identifier of your app
+# apple_id "apple@fastlane.tools" # Your Apple ID
+json_key_file "fastlane/deploy-credentials.json"
+package_name "com.acer.android.mod"
+
+app_identifier "com.acer.mod.dev" # the bundle identifier of your app
+apple_id "acer.modap@gmail.com" # Your Apple ID
+itc_team_id "118642676"
+
+for_lane :iosAcer do
+  app_identifier "com.acer.mod"
+  team_id "4EYEAYMKM9"
+  itc_team_id "1274903"
+end

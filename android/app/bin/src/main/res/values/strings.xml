@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">宏碁自駕接駁車試乘應用</string>
+    <string name="facebook_app_id" translatable="false">1992652584085983</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1992652584085983</string>
+    <string name="google_map_key" translatable="false">AIzaSyBg9d7x2MUo6WVnhy_POk_BdcVscVBktb4</string>
+    <string name="drive_car_title">上車通知</string>
+    <string name="drive_car_msg">車輛已到達指定站點，請上車，然後請按開車鈕</string>
+    <string name="drive_car_user_msg">車輛已到達指定站點，請上車</string>
+    <string name="admin_cancel_order_title">使用者取消通知</string>
+    <string name="order_status_end">到達終點</string>
+    <string name="admin_receive_new_request">收到新訂單，請前往指定站點</string>
+</resources>

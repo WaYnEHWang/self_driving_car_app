@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/206f28c04bff95d184674f1c22890dd7/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/206f28c04bff95d184674f1c22890dd7/res/values-port/values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

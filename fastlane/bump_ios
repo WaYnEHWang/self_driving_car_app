@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source android/version.properties
+echo "Use android version $VERSION_NAME $VERSION_CODE"
+
+cd ios
+
+agvtool new-version -all $VERSION_CODE || { echo 'agvtool new-version fail'; cd ..; exit 1; }
+agvtool new-marketing-version $VERSION_NAME || { echo 'agvtool new-marketing-version fail'; cd ..; exit 1; }
+
+cd ..

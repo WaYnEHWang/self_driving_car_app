@@ -1,0 +1,14 @@
+#!/bin/bash
+
+fastlane/bump_ios
+git add android/version.properties \
+        ios/mod-tvOS/Info.plist \
+        ios/mod-tvOSTests/Info.plist \
+        ios/mod.xcodeproj/project.pbxproj \
+        ios/mod/Info.plist \
+        ios/modTests/Info.plist \
+
+
+source android/version.properties
+git commit -m "[All][MoD][RN] bump version $VERSION_NAME" -m "`tail -n2 android/version.properties`"
+

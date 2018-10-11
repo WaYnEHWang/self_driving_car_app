@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/a7047ffb6f2f18d240c5039fc208c459/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/a7047ffb6f2f18d240c5039fc208c459/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/a7047ffb6f2f18d240c5039fc208c459/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/home/wayne/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.0.aar/a7047ffb6f2f18d240c5039fc208c459/res/layout-v21/notification_action.xml"
+    }
+]

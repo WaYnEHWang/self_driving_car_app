@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher.png",
+        "source": "/home/wayne/React-Native/mod_20180905/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/img_mod_logo.png",
+        "source": "/home/wayne/React-Native/mod_20180905/android/app/src/main/res/mipmap-hdpi/img_mod_logo.png"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_directions_car_n.png",
+        "source": "/home/wayne/React-Native/mod_20180905/android/app/src/main/res/mipmap-hdpi/ic_directions_car_n.png"
+    },
+    {
+        "merged": "/home/wayne/React-Native/mod_20180905/android/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4/ic_launcher_round.png",
+        "source": "/home/wayne/React-Native/mod_20180905/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    }
+]
